@@ -1,0 +1,11 @@
+{
+  "name": "Project_client",
+  "integrations": {},
+  "proxies": [
+    {
+      "path": "/",
+      "proxyUrl": "https://accounts.google.com/o/oauth2/v2"
+    }
+  ],
+  "type": "ionic-angular"
+}

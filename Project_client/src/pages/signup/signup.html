@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Criar uma conta</ion-title>
+    </ion-navbar>
+</ion-header>
+      
+<ion-content padding>
+        
+    <ion-row class="account-form">
+        <ion-col>
+            
+            <form [formGroup]="signupform">
+                <ion-list inset>
+        
+                    <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
+                    <ion-item>
+                        <ion-label floating>Email</ion-label>
+                        <ion-input formControlName="email" [(ngModel)]="email" type="text" [class.invalid]="!signupform.controls.email.valid && (signupform.controls.email.dirty || submitAttempt)"></ion-input>
+                    </ion-item>
+            
+                    <ion-item>
+                        <ion-label floating>Senha</ion-label>
+                        <ion-input formControlName="password" [(ngModel)]="password" type="password" [class.invalid]="!signupform.controls.password.valid && (signupform.controls.password.dirty || submitAttempt)"></ion-input>
+                    </ion-item>    
+                </ion-list>
+        
+            </form>
+            
+            <button ion-button (click)="register()" class="continue-button">Register</button>
+            
+        </ion-col>
+    </ion-row>
+</ion-content>
